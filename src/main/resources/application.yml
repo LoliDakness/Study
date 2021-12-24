@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.132.150.2:3306/thecontroller?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+    username: root
+    password: Hx20200415
+
+  mail:
+    protool: smtp #邮箱协议
+    host: smtp.163.com #邮箱协议地址
+    port: 25
+    username: fgo2981298917@163.com #发件人地址
+    password: UFYEPDESDQYWYDJR #授权码
+    default-encoding: utf-8 #编码字符集
+    properties:
+      mail:
+        debug: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 9001
+
+
+
