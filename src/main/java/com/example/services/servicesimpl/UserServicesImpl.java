@@ -24,7 +24,16 @@ public class UserServicesImpl implements UserService{
     private UserMapper us;
     @Autowired
     private MailService ms;
+    /**
+     * 注册账号
+     * @param user
+     * @return
+     */
     public Result createUser(User user){
+        int res=us.selectByEmailName(user.getEmail());
+        if(res>0){
+            return new Result(Result.ERROR_CODE,"该账号已经注册");
+        }
         // 雪花算法生成验证码
         String confirmCode= IdUtil.getSnowflake(1,1).nextIdStr();
         //yan
