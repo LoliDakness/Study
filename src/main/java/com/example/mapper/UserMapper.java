@@ -38,4 +38,9 @@ public interface UserMapper {
      * @return
      */
     List<User> selectUserByEmail(@Param("email") String email);
+    
+    /**
+     * 根据邮箱查询是否有相同邮箱
+     */
+    int selectByEmailName(@Param("email") String email);
 }
